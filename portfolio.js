@@ -137,14 +137,14 @@ let heroData = {
   },
   style: {
     page: {
-      width: "100%", height: "480px", backgroundColor: "#87509c", textAlign: "center",
+      width: "100%", minHeight: "480px", backgroundColor: "#87509c", textAlign: "center",
       // lineHeight: "60px", paddingTop: "60px", color: "white"
     },
     container: {
       maxWidth: "1198px", margin: "0 20px", textAlign: "center"
     },
     welcomeMsg: {
-      margin: "0 auto", textAlign: "center", clear: "both", color: "white", fontSize: "46px", maxWidth: "720px", lineHeight: "50px"
+      margin: "0 auto", padding: "60px 0px", textAlign: "center", clear: "both", color: "white", fontSize: "46px", maxWidth: "720px", lineHeight: "50px"
     },
     nav_links: {
       float: "right"
