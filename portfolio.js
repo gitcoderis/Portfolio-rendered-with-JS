@@ -107,7 +107,7 @@ let navData = {
       float: "right"
     },
     nav_links_li: {
-      display: "inline-block", marginLeft: "15px", cursor: "pointer"
+      display: "inline-block", marginLeft: "45px", cursor: "pointer", fontSize: "16px"
     }
   }
 };
@@ -132,19 +132,19 @@ nav.addStyle('.nav_links > ul > li', navData.style.nav_links_li);
 let heroData = {
   html: {
     container: {data: "<div class='container'></div>"},
-    logo: { data: "<div class='logo_container'><b>Logo</b></div>" },
-    links: { data: "<div class='nav_links'><ul><li>Home</li><li>About</li><li>Work</li><li>Blog</li><li>Contact</li></ul></div>" },
+    welcomeMsg: { data: "<h1 class='welcomeMsg'>Hi there! We are the new kids on the block and we build awesome websites and mobile apps.</h1>" },
+    // links: { data: "<div class='nav_links'><ul><li>Home</li><li>About</li><li>Work</li><li>Blog</li><li>Contact</li></ul></div>" },
   },
   style: {
     page: {
-      width: "100%", height: "600px", backgroundColor: "#87509c", textAlign: "center",
+      width: "100%", height: "480px", backgroundColor: "#87509c", textAlign: "center",
       // lineHeight: "60px", paddingTop: "60px", color: "white"
     },
     container: {
-      maxWidth: "1198px", margin: "0 20px"
+      maxWidth: "1198px", margin: "0 20px", textAlign: "center"
     },
-    logo_container: {
-      float: "left"
+    welcomeMsg: {
+      margin: "0 auto", textAlign: "center", clear: "both", color: "white", fontSize: "46px", maxWidth: "720px", lineHeight: "50px"
     },
     nav_links: {
       float: "right"
@@ -159,10 +159,11 @@ let hero = new Element();
 hero.createElem('section', 'page', 'hero');
                 //WhereToAdd, whatToAdd
 nav.addElements('#hero', heroData.html.container);
-nav.addElements('.container', heroData.html.logo);
-nav.addElements('.container', heroData.html.links);
-nav.addStyle('#nav', heroData.style.page);
-nav.addStyle('.container', heroData.style.container);
-nav.addStyle('.logo_container', heroData.style.logo_container);
-nav.addStyle('.nav_links', heroData.style.nav_links);
-nav.addStyle('.nav_links > ul > li', heroData.style.nav_links_li);
+nav.addElements('#hero > .container', heroData.html.welcomeMsg);
+// nav.addElements('.container', heroData.html.links);
+nav.addStyle('#hero', heroData.style.page);
+nav.addStyle('.welcomeMsg', heroData.style.welcomeMsg);
+// nav.addStyle('.container', heroData.style.container);
+// nav.addStyle('.logo_container', heroData.style.logo_container);
+// nav.addStyle('.nav_links', heroData.style.nav_links);
+// nav.addStyle('.nav_links > ul > li', heroData.style.nav_links_li);
