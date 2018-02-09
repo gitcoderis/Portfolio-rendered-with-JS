@@ -89,25 +89,28 @@ for(let x in pageBody.style.body) {
 let navData = {
   html: {
     container: {data: "<div class='container'></div>"},
-    logo: { data: "<div class='logo_container'><b>Logo</b></div>" },
-    links: { data: "<div class='nav_links'><ul><li>Home</li><li>About</li><li>Work</li><li>Blog</li><li>Contact</li></ul></div>" },
+    logo: { data: "<div class='logo_container'><img src='./assets/logo.png' alt='Logo'></div>" },
+    links: { data: "<div class='nav_links'><ul><li class='active'>Home</li><li>About</li><li>Work</li><li>Blog</li><li>Contact</li></ul></div>" },
   },
   style: {
     page: {
       width: "100%", height: "60px", backgroundColor: "#87509c", textAlign: "center",
-      lineHeight: "60px", paddingTop: "60px", color: "white"
+       paddingTop: "45px", color: "white"
     },
     container: {
-      maxWidth: "1198px", margin: "0 20px"
+      maxWidth: "1140px", margin: "0 auto", padding: "0px 20px"
     },
     logo_container: {
-      float: "left"
+      float: "left", height: "70px", marginTop: "10px"
     },
     nav_links: {
       float: "right"
     },
     nav_links_li: {
-      display: "inline-block", marginLeft: "45px", cursor: "pointer", fontSize: "16px"
+      display: "inline-block", marginLeft: "45px", cursor: "pointer", fontSize: "16px", textTransform: "uppercase"
+    },
+    nav_links_active: {
+      backgroundColor: "#643a79", padding: "5px 15px", borderRadius: "5px"
     }
   }
 };
@@ -125,6 +128,7 @@ nav.addStyle('#nav', navData.style.page);
 nav.addStyle('.container', navData.style.container);
 nav.addStyle('.logo_container', navData.style.logo_container);
 nav.addStyle('.nav_links', navData.style.nav_links);
+nav.addStyle('.active', navData.style.nav_links_active);
 nav.addStyle('.nav_links > ul > li', navData.style.nav_links_li);
 
 
@@ -133,7 +137,7 @@ let heroData = {
   html: {
     container: {data: "<div class='container'></div>"},
     welcomeMsg: { data: "<h1 class='welcomeMsg'>Hi there! We are the new kids on the block and we build awesome websites and mobile apps.</h1>" },
-    // links: { data: "<div class='nav_links'><ul><li>Home</li><li>About</li><li>Work</li><li>Blog</li><li>Contact</li></ul></div>" },
+    cta: { data: "<button>WORK WITH US!</button>" },
   },
   style: {
     page: {
@@ -144,7 +148,11 @@ let heroData = {
       maxWidth: "1198px", margin: "0 20px", textAlign: "center"
     },
     welcomeMsg: {
-      margin: "0 auto", padding: "60px 0px", textAlign: "center", clear: "both", color: "white", fontSize: "46px", maxWidth: "720px", lineHeight: "50px"
+      margin: "0 auto", padding: "110px 0px 60px 0px", textAlign: "center", clear: "both", color: "white", fontSize: "42px", maxWidth: "900px", lineHeight: "50px"
+    },
+    cta: {
+      marginBottom: "145px", textAlign: "center", color: "white", fontSize: "18px", backgroundColor: "#eb7d4b", padding: "30px 80px", borderRadius: "5px",
+      borderStyle: "solid", borderTopWidth: "0px", borderLeftWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "4px", borderBottomColor: "#c86a40"
     },
     nav_links: {
       float: "right"
@@ -158,11 +166,12 @@ let heroData = {
 let hero = new Element();
 hero.createElem('section', 'page', 'hero');
                 //WhereToAdd, whatToAdd
-nav.addElements('#hero', heroData.html.container);
-nav.addElements('#hero > .container', heroData.html.welcomeMsg);
-// nav.addElements('.container', heroData.html.links);
-nav.addStyle('#hero', heroData.style.page);
-nav.addStyle('.welcomeMsg', heroData.style.welcomeMsg);
+hero.addElements('#hero', heroData.html.container);
+hero.addElements('#hero > .container', heroData.html.welcomeMsg);
+hero.addElements('#hero', heroData.html.cta);
+hero.addStyle('#hero', heroData.style.page);
+hero.addStyle('.welcomeMsg', heroData.style.welcomeMsg);
+hero.addStyle('button', heroData.style.cta);
 // nav.addStyle('.container', heroData.style.container);
 // nav.addStyle('.logo_container', heroData.style.logo_container);
 // nav.addStyle('.nav_links', heroData.style.nav_links);
