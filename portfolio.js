@@ -145,7 +145,7 @@ let heroData = {
       // lineHeight: "60px", paddingTop: "60px", color: "white"
     },
     container: {
-      maxWidth: "1198px", margin: "0 20px", textAlign: "center"
+      maxWidth: "1140px", margin: "0 20px", textAlign: "center"
     },
     welcomeMsg: {
       margin: "0 auto", padding: "110px 0px 60px 0px", textAlign: "center", clear: "both", color: "white", fontSize: "42px", maxWidth: "900px", lineHeight: "50px"
@@ -172,7 +172,137 @@ hero.addElements('#hero', heroData.html.cta);
 hero.addStyle('#hero', heroData.style.page);
 hero.addStyle('.welcomeMsg', heroData.style.welcomeMsg);
 hero.addStyle('button', heroData.style.cta);
-// nav.addStyle('.container', heroData.style.container);
-// nav.addStyle('.logo_container', heroData.style.logo_container);
-// nav.addStyle('.nav_links', heroData.style.nav_links);
-// nav.addStyle('.nav_links > ul > li', heroData.style.nav_links_li);
+
+
+// SERVICES
+
+
+let servicesData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitle'>SERVICES WE PROVIDE</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>We are working with both individuals and businesses from all over the globe to create awesome websites and applications.</p>" },
+    servicesDivsContainer: {data: "<div class='servicesContainer'></div>"},
+    servicesDivs: {
+      branding: "<div><img src='./assets/veliav.png' alt='Flag' /><h3>Branding</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      design: "<div><img src='./assets/piest.png' alt='Flag' /><h3>Design</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      developement: "<div><img src='./assets/raket.png' alt='Flag' /><h3>Developement</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      science: "<div><img src='./assets/gear.png' alt='Flag' /><h3>Rocket Science</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+    }
+  },
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#17c2a4", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitle: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "white", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.5", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "white", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "80px"
+    },
+    h3: {
+      fontSize: "16px", color: "white", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "5px"
+    },
+    servicesContainer: {
+      paddingBottom: "30px"
+    },
+    servicesDivs: {
+      display: "inline-block", width: "25%", maxWidth: "260px", flaot: "left", padding: "0px 20px"
+
+    },
+    servicesImgs: {
+      width: "100%"
+    }
+  }
+};
+
+let services = new Element();
+services.createElem('section', 'page', 'services');
+                //WhereToAdd, whatToAdd
+services.addElements('#services', servicesData.html.container);
+services.addElements('#services > .container', servicesData.html.sectionTitle);
+services.addElements('#services > .container', servicesData.html.hr);
+services.addElements('#services > .container', servicesData.html.subtitle);
+services.addElements('#services > .container', servicesData.html.servicesDivsContainer);
+services.addElements('#services > .container > .servicesContainer', servicesData.html.servicesDivs);
+services.addStyle('#services', servicesData.style.page);
+services.addStyle('.sectionTitle', servicesData.style.sectionTitle);
+services.addStyle('hr', servicesData.style.hr);
+services.addStyle('h3', servicesData.style.h3);
+services.addStyle('p', servicesData.style.subtitle);
+services.addStyle('.servicesContainer', servicesData.style.servicesContainer);
+services.addStyle('.servicesContainer > div', servicesData.style.servicesDivs);
+services.addStyle('.servicesContainer > div > img', servicesData.style.servicesImgs);
+
+
+// TEAM
+
+
+let teamData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitleDark'>SERVICES WE PROVIDE</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>We are a small team of designers and developers, who help brands with big ideas.</p>" },
+    teamDivsContainer: {data: "<div class='teamContainer'></div>"},
+    teamDivs: {
+      memb1: "<div><div class='teamMember'></div><h3>ANNE HATHAWAY</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      memb2: "<div><div class='teamMember'></div><h3>Kate Upton</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      memb3: "<div><div class='teamMember'></div><h3>Olivia Wilde</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      memb4: "<div><div class='teamMember'></div><h3>Ashley Greene</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+    }
+  },
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#e7f1f8", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitleDark: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#3c4761", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "80px"
+    },
+    h3: {
+      fontSize: "16px", color: "white", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "5px"
+    },
+    teamContainer: {
+      paddingBottom: "30px"
+    },
+    teamDivs: {
+      display: "inline-block", width: "25%", maxWidth: "260px", flaot: "left", padding: "0px 20px"
+
+    },
+    teamMember: {
+      width: "100%"
+    }
+  }
+};
+
+let team = new Element();
+team.createElem('section', 'page', 'team');
+                //WhereToAdd, whatToAdd
+team.addElements('#team', teamData.html.container);
+team.addElements('#team > .container', teamData.html.sectionTitle);
+team.addElements('#team > .container', teamData.html.hr);
+team.addElements('#team > .container', teamData.html.subtitle);
+team.addElements('#team > .container', teamData.html.servicesDivsContainer);
+team.addElements('#team > .container > .teamContainer', teamData.html.teamDivs);
+team.addStyle('#team', teamData.style.page);
+team.addStyle('.sectionTitleDark', teamData.style.sectionTitleDark);
+team.addStyle('hr', teamData.style.hr);
+team.addStyle('h3', teamData.style.h3);
+team.addStyle('#team > p', teamData.style.subtitle);
+team.addStyle('.teamContainer', teamData.style.teamContainer);
+team.addStyle('.teamContainer > div', teamData.style.teamDivs);
+team.addStyle('.teamContainer > div > .teamMember', teamData.style.teamMember);
