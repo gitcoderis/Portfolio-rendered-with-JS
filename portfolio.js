@@ -247,15 +247,15 @@ services.addStyle('.servicesContainer > div > img', servicesData.style.servicesI
 let teamData = {
   html: {
     container: {data: "<div class='container'></div>"},
-    sectionTitle: { data: "<h1 class='sectionTitleDark'>SERVICES WE PROVIDE</h1>" },
+    sectionTitle: { data: "<h1 class='sectionTitleDark'>MEET OUR BEAUTIFUL TEAM</h1>" },
     hr: {data: "<hr>"},
     subtitle: { data: "<p>We are a small team of designers and developers, who help brands with big ideas.</p>" },
     teamDivsContainer: {data: "<div class='teamContainer'></div>"},
     teamDivs: {
-      memb1: "<div><div class='teamMember'></div><h3>ANNE HATHAWAY</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      memb2: "<div><div class='teamMember'></div><h3>Kate Upton</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      memb3: "<div><div class='teamMember'></div><h3>Olivia Wilde</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      memb4: "<div><div class='teamMember'></div><h3>Ashley Greene</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      memb1: "<div><div class='teamMember'></div><h3>ANNE HATHAWAY</h3><h4>CEO / Marketing Guru</h4><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p><a href='#'><div class='icon' href='#'><img src='./assets/mail.png' alt='email' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/tw.png' alt='twitter' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/fb.png' alt='fb' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/in.png' alt='Linkedin' /></div></a></div>",
+      memb2: "<div><div class='teamMember'></div><h3>Kate Upton</h3><h4>Creative Director</h4><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p><a href='#'><div class='icon' href='#'><img src='./assets/mail.png' alt='email' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/tw.png' alt='twitter' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/in.png' alt='Linkedin' /></div></a></div>",
+      memb3: "<div><div class='teamMember'></div><h3>Olivia Wilde</h3><h4>Lead Designer</h4><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p><a href='#'><div class='icon' href='#'><img src='./assets/mail.png' alt='email' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/tw.png' alt='twitter' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/fb.png' alt='fb' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/in.png' alt='Linkedin' /></div></a></div>",
+      memb4: "<div><div class='teamMember'></div><h3>Ashley Greene</h3><h4>SEO / Developer</h4><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p><a href='#'><div class='icon' href='#'><img src='./assets/mail.png' alt='email' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/tw.png' alt='twitter' /></div></a><a href='#'><div class='icon' href='#'><img src='./assets/in.png' alt='Linkedin' /></div></a></div>",
     }
   },
   style: {
@@ -271,20 +271,29 @@ let teamData = {
     },
     hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
     subtitle: {
-      fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "80px"
+      fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
     },
     h3: {
-      fontSize: "16px", color: "white", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "5px"
+      fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "0px"
     },
+    h4: {
+        fontSize: "12px", color: "#30bae7", letterSpacing: "1px", margin: "5px auto", paddingTop: "0px"
+      },
+    mainText: {
+        color: "black"
+      },
     teamContainer: {
-      paddingBottom: "30px"
+      paddingBottom: "100px", marginTop: "0px"
     },
     teamDivs: {
-      display: "inline-block", width: "25%", maxWidth: "260px", flaot: "left", padding: "0px 20px"
+      verticalAlign: "top", display: "inline-block", width: "25%", maxWidth: "260px", flaot: "left", padding: "0px 20px"
 
     },
     teamMember: {
-      width: "100%"
+      width: "160px", height: "160px", backgroundColor: "grey", borderRadius: "50%", margin: "50px auto 0px auto"
+    },
+    icon: {
+      width: "34px", height: "33px", backgroundColor: "#bdd1df", borderRadius: "50%", display: "inline-block", margin: "0 6px", paddingTop: "1px"
     }
   }
 };
@@ -296,13 +305,87 @@ team.addElements('#team', teamData.html.container);
 team.addElements('#team > .container', teamData.html.sectionTitle);
 team.addElements('#team > .container', teamData.html.hr);
 team.addElements('#team > .container', teamData.html.subtitle);
-team.addElements('#team > .container', teamData.html.servicesDivsContainer);
+team.addElements('#team > .container', teamData.html.teamDivsContainer);
 team.addElements('#team > .container > .teamContainer', teamData.html.teamDivs);
 team.addStyle('#team', teamData.style.page);
 team.addStyle('.sectionTitleDark', teamData.style.sectionTitleDark);
 team.addStyle('hr', teamData.style.hr);
-team.addStyle('h3', teamData.style.h3);
-team.addStyle('#team > p', teamData.style.subtitle);
+team.addStyle('#team > .container > .teamContainer > div > h3', teamData.style.h3);
+team.addStyle('#team > .container > .teamContainer > div > h4', teamData.style.h4);
+team.addStyle('#team > .container > p', teamData.style.subtitle);
 team.addStyle('.teamContainer', teamData.style.teamContainer);
 team.addStyle('.teamContainer > div', teamData.style.teamDivs);
 team.addStyle('.teamContainer > div > .teamMember', teamData.style.teamMember);
+team.addStyle('.icon', teamData.style.icon);
+// team.addStyle('.mainText', teamData.style.mainText);
+
+
+
+
+
+// SKILLS
+
+
+
+let skillsData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitleDark'>WE GOT SKILLS!</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
+    servicesDivsContainer: {data: "<div class='skillsContainer'></div>"},
+    servicesDivs: {
+      branding: "<div><img src='./assets/b.png' alt='' /><h3>Branding</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      design: "<div><img src='./assets/r.png' alt='' /><h3>Design</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      developement: "<div><img src='./assets/g.png' alt='' /><h3>Developement</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+      science: "<div><img src='./assets/o.png' alt='' /><h3>Rocket Science</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+    }
+  },
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#fff", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitleDark: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#3c4761", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
+    },
+    h3: {
+      fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "0px"
+    },
+    skillsContainer: {
+      paddingBottom: "30px"
+    },
+    servicesDivs: {
+      display: "inline-block", width: "25%", maxWidth: "160px", flaot: "left", padding: "0px 20px"
+
+    },
+    servicesImgs: {
+      width: "100%"
+    }
+  }
+};
+
+let skills = new Element();
+skills.createElem('section', 'page', 'skills');
+                //WhereToAdd, whatToAdd
+skills.addElements('#skills', skillsData.html.container);
+skills.addElements('#skills > .container', skillsData.html.sectionTitle);
+skills.addElements('#skills > .container', skillsData.html.hr);
+skills.addElements('#skills > .container', skillsData.html.subtitle);
+skills.addElements('#skills > .container', skillsData.html.servicesDivsContainer);
+skills.addElements('#skills > .container > .skillsContainer', skillsData.html.servicesDivs);
+skills.addStyle('#skills', skillsData.style.page);
+skills.addStyle('.sectionTitleDark', skillsData.style.sectionTitleDark);
+skills.addStyle('hr', skillsData.style.hr);
+skills.addStyle('#skills > .container > h3', skillsData.style.h3);
+skills.addStyle('#skills > .container > p', skillsData.style.subtitle);
+skills.addStyle('.skillsContainer', skillsData.style.skillsContainer);
+skills.addStyle('.skillsContainer > div', skillsData.style.servicesDivs);
+skills.addStyle('.skillsContainer > div > img', skillsData.style.servicesImgs);
