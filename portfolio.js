@@ -630,3 +630,214 @@ about.addStyle('.aboutContainer', aboutData.style.aboutContainer);
 about.addStyle('#about > .container > .aboutContainer > div > div', aboutData.style.aboutDivs);
 about.addStyle('#about > .container > .aboutContainer > div > div > p', aboutData.style.italic);
 about.addStyle('.aboutContainer > div > div > img', aboutData.style.aboutImgs);
+
+
+
+// CONTACTS
+
+
+
+let contactData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitle'>GET IN TOUCH</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111</p>" },
+    // links: { data: "<div class='nav_links'><ul><li class='btn-white'>All</li><li class='btn-dark'>WEB</li><li class='btn-dark'>APPS</li><li class='btn-dark'>ICONS</li></ul></div>" },
+    contactDivsContainer: {data: "<div class='contactContainer'></div>"},
+    contactDivs: {
+      1: `<div>
+
+        <form style='width: 100%;'>
+          <input type='text' value='Name' placeholder='Name' style='width: 100%; max-width: 45%;'>
+          <input type='text' value='Name' placeholder='Surname' style='width: 100%; max-width: 45%;'>
+          <textarea cols='9' rows='9' style='width: 100%; max-width: 95%;'>Message</textarea>
+        </form>
+
+      </div>`,
+
+    },
+    cta: { data: "<button>Send message</button>" },
+
+  },
+
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#3c5499", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitle: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#fff", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "#fff", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
+    },
+    h3: {
+      fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px", marginTop: "0px"
+    },
+    // nav_links: {
+    //   paddingLeft: "0px"
+    // },
+    // nav_links_li: {
+    //   display: "inline-block", margin: "0 5px", cursor: "pointer", fontSize: "16px", textTransform: "uppercase"
+    // },
+    // nav_links_active: {
+    //   backgroundColor: "#fff", padding: "5px 15px", borderRadius: "5px"
+    // },
+    // nav_links_notActive: {
+    //   backgroundColor: "rgba(0,0,0,.1)", padding: "5px 15px", borderRadius: "5px"
+    // },
+    contactContainer: {
+      paddingBottom: "0px", margin: "30px auto", width: "100%", maxWidth: "860px"
+    },
+    contactDivs: {
+       padding: "0px 0px",
+
+    },
+    input: {
+      backgroundColor: "#273a71", borderWidth: "0px", padding: "10px 10px", borderRadius: "4px", color: "white", margin: "5px 10px"
+    },
+    textarea: {
+        backgroundColor: "#273a71", borderWidth: "0px", padding: "10px 10px", borderRadius: "4px", color: "white", margin: "5px 10px"
+      },
+    // contactImgs: {
+    //   width: "100%", marginTop: "20px"
+    // },
+    cta: {
+      marginBottom: "80px", textAlign: "center", color: "white", fontSize: "14px", backgroundColor: "#30bae7", padding: "20px 50px", borderRadius: "5px",
+        borderStyle: "solid", borderTopWidth: "0px", borderLeftWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "4px", borderBottomColor: "#299ec5", textTransform: "uppercase"
+      },
+
+
+
+  }
+};
+
+let contact = new Element();
+contact.createElem('section', 'page', 'contact');
+                //WhereToAdd, whatToAdd
+contact.addElements('#contact', contactData.html.container);
+contact.addElements('#contact > .container', contactData.html.sectionTitle);
+contact.addElements('#contact > .container', contactData.html.hr);
+contact.addElements('#contact > .container', contactData.html.subtitle);
+// contact.addElements('#contact > .container', contactData.html.links);
+contact.addElements('#contact > .container', contactData.html.contactDivsContainer);
+contact.addElements('#contact > .container > .contactContainer', contactData.html.contactDivs);
+contact.addElements('#contact > .container', contactData.html.cta);
+contact.addStyle('#contact', contactData.style.page);
+contact.addStyle('#contact > .container > .sectionTitle', contactData.style.sectionTitle);
+contact.addStyle('hr', contactData.style.hr);
+// contact.addStyle('#contact > .container > .nav_links > ul', contactData.style.nav_links);
+// contact.addStyle('#contact > .container > .nav_links > ul > li', contactData.style.nav_links_li);
+// contact.addStyle('#contact > .container > .nav_links > ul > .btn-white', contactData.style.nav_links_active);
+// contact.addStyle('#contact > .container > .nav_links > ul > .btn-dark', contactData.style.nav_links_notActive);
+contact.addStyle('#contact > .container > .contactContainer > div > h3', contactData.style.h3);
+contact.addStyle('#contact > .container > p', contactData.style.subtitle);
+contact.addStyle('.contactContainer', contactData.style.contactContainer);
+contact.addStyle('#contact > .container > .contactContainer > div > form > input', contactData.style.input);
+contact.addStyle('#contact > .container > .contactContainer > div > form > textarea', contactData.style.textarea);
+contact.addStyle('#contact > .container > .contactContainer > div', contactData.style.contactDivs);
+contact.addStyle('.contactContainer > div > img', contactData.style.folioImgs);
+contact.addStyle('#contact > .container > button', contactData.style.cta);
+
+
+
+
+// LINKS
+
+
+
+let linksData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitleDark'>OUR PORTFOLIO</h1>" },
+    // hr: {data: "<hr>"},
+    // subtitle: { data: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
+    links: { data: `
+        <div class='nav_links'>
+          <ul style='margin: 0px'>
+            <li class='btn-white'>Facebook</li>
+            <li class='btn-dark'>Twitter</li>
+            <li class='btn-dark'>Google+</li>
+            <li class='btn-dark'>Linkedin</li>
+            <li class='btn-dark'>Behance</li>
+            <li class='btn-dark'>Dribbble</li>
+            <li class='btn-dark'>GitHub</li>
+          </ul>
+        </div>` },
+    // folioDivsContainer: {data: "<div class='folioContainer'></div>"},
+    // folioDivs: {
+    //   1: "<div><img src='./assets/1.png' alt='' /><h3>Isometric Perspective Mock-Up</h3></div>",
+    //   2: "<div><img src='./assets/2.png' alt='' /><h3>Time Zone App UI</h3></div>",
+    //   3: "<div><img src='./assets/3.png' alt='' /><h3>Viro Media Players UI</h3></div>",
+    //   4: "<div><img src='./assets/4.png' alt='' /><h3>Blog / Magazine Flat UI Kit</h3></div>",
+    // },
+    // cta: { data: "<button>Load more projects</button>" },
+
+  },
+
+  style: {
+    page: {
+      width: "100%", minHeight: "110px", backgroundColor: "#344b8e", textAlign: "center", lineHeight: "110px", margin: "0"
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    // sectionTitleDark: {
+    //   margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#3c4761", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    // },
+    // hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    // subtitle: {
+    //   fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
+    // },
+    // h3: {
+    //   fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px", marginTop: "0px"
+    // },
+    nav_links: {
+      paddingLeft: "0px"
+    },
+    nav_links_li: {
+      display: "inline-block", margin: "0 15px", cursor: "pointer", fontSize: "16px", color: "white"
+    },
+    // nav_links_active: {
+    //   backgroundColor: "#fff", padding: "5px 15px", borderRadius: "5px"
+    // },
+    // nav_links_notActive: {
+    //   backgroundColor: "rgba(0,0,0,.1)", padding: "5px 15px", borderRadius: "5px"
+    // },
+    // folioContainer: {
+    //   paddingBottom: "80px", marginTop: "30px"
+    // },
+    // folioDivs: {
+    //   display: "inline-block", width: "45%", maxWidth: "520px", flaot: "left", padding: "0px 0px", margin: "0px 20px"
+    //
+    // },
+    // folioImgs: {
+    //   width: "100%", marginTop: "20px"
+    // },
+    // cta: {
+    //   marginBottom: "80px", textAlign: "center", color: "white", fontSize: "14px", backgroundColor: "#17c2a4", padding: "20px 50px", borderRadius: "5px",
+    //     borderStyle: "solid", borderTopWidth: "0px", borderLeftWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "4px", borderBottomColor: "#14a58c", textTransform: "uppercase"
+    //   },
+
+
+
+  }
+};
+
+let links = new Element();
+links.createElem('section', 'page', 'links');
+                //WhereToAdd, whatToAdd
+links.addElements('#links', linksData.html.container);
+
+links.addElements('#links > .container', linksData.html.links);
+
+links.addStyle('#links', linksData.style.page);
+
+links.addStyle('#links > .container > .nav_links > ul', linksData.style.nav_links);
+links.addStyle('#links > .container > .nav_links > ul > li', linksData.style.nav_links_li);
