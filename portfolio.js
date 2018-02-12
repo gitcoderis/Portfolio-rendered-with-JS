@@ -402,14 +402,18 @@ let folioData = {
     sectionTitle: { data: "<h1 class='sectionTitleDark'>OUR PORTFOLIO</h1>" },
     hr: {data: "<hr>"},
     subtitle: { data: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
+    links: { data: "<div class='nav_links'><ul><li class='btn-white'>All</li><li class='btn-dark'>WEB</li><li class='btn-dark'>APPS</li><li class='btn-dark'>ICONS</li></ul></div>" },
     folioDivsContainer: {data: "<div class='folioContainer'></div>"},
     folioDivs: {
       1: "<div><img src='./assets/1.png' alt='' /><h3>Isometric Perspective Mock-Up</h3></div>",
       2: "<div><img src='./assets/2.png' alt='' /><h3>Time Zone App UI</h3></div>",
       3: "<div><img src='./assets/3.png' alt='' /><h3>Viro Media Players UI</h3></div>",
       4: "<div><img src='./assets/4.png' alt='' /><h3>Blog / Magazine Flat UI Kit</h3></div>",
-    }
+    },
+    cta: { data: "<button>Load more projects</button>" },
+
   },
+
   style: {
     page: {
       width: "100%", minHeight: "480px", backgroundColor: "#ffdd99", textAlign: "center",
@@ -428,6 +432,18 @@ let folioData = {
     h3: {
       fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px", marginTop: "0px"
     },
+    nav_links: {
+      paddingLeft: "0px"
+    },
+    nav_links_li: {
+      display: "inline-block", margin: "0 5px", cursor: "pointer", fontSize: "16px", textTransform: "uppercase"
+    },
+    nav_links_active: {
+      backgroundColor: "#fff", padding: "5px 15px", borderRadius: "5px"
+    },
+    nav_links_notActive: {
+      backgroundColor: "rgba(0,0,0,.1)", padding: "5px 15px", borderRadius: "5px"
+    },
     folioContainer: {
       paddingBottom: "80px", marginTop: "30px"
     },
@@ -437,7 +453,14 @@ let folioData = {
     },
     folioImgs: {
       width: "100%", marginTop: "20px"
-    }
+    },
+    cta: {
+      marginBottom: "80px", textAlign: "center", color: "white", fontSize: "14px", backgroundColor: "#17c2a4", padding: "20px 50px", borderRadius: "5px",
+        borderStyle: "solid", borderTopWidth: "0px", borderLeftWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "4px", borderBottomColor: "#14a58c", textTransform: "uppercase"
+      },
+
+
+
   }
 };
 
@@ -448,13 +471,162 @@ folio.addElements('#folio', folioData.html.container);
 folio.addElements('#folio > .container', folioData.html.sectionTitle);
 folio.addElements('#folio > .container', folioData.html.hr);
 folio.addElements('#folio > .container', folioData.html.subtitle);
+folio.addElements('#folio > .container', folioData.html.links);
 folio.addElements('#folio > .container', folioData.html.folioDivsContainer);
 folio.addElements('#folio > .container > .folioContainer', folioData.html.folioDivs);
+folio.addElements('#folio > .container', folioData.html.cta);
 folio.addStyle('#folio', folioData.style.page);
 folio.addStyle('.sectionTitleDark', folioData.style.sectionTitleDark);
 folio.addStyle('hr', folioData.style.hr);
+folio.addStyle('#folio > .container > .nav_links > ul', folioData.style.nav_links);
+folio.addStyle('#folio > .container > .nav_links > ul > li', folioData.style.nav_links_li);
+folio.addStyle('#folio > .container > .nav_links > ul > .btn-white', folioData.style.nav_links_active);
+folio.addStyle('#folio > .container > .nav_links > ul > .btn-dark', folioData.style.nav_links_notActive);
 folio.addStyle('#folio > .container > .folioContainer > div > h3', folioData.style.h3);
 folio.addStyle('#folio > .container > p', folioData.style.subtitle);
 folio.addStyle('.folioContainer', folioData.style.folioContainer);
 folio.addStyle('#folio > .container > .folioContainer > div', folioData.style.folioDivs);
 folio.addStyle('.folioContainer > div > img', folioData.style.folioImgs);
+folio.addStyle('#folio > .container > button', folioData.style.cta);
+
+
+
+
+
+// ABOUT
+
+
+
+let aboutData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitle'>WHAT PEOPLE SAY ABOUT US</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>Our clients love us!</p>" },
+    // links: { data: "<div class='nav_links'><ul><li class='btn-white'>All</li><li class='btn-dark'>WEB</li><li class='btn-dark'>APPS</li><li class='btn-dark'>ICONS</li></ul></div>" },
+    aboutDivsContainer: {data: "<div class='aboutContainer'></div>"},
+    aboutDivs: {
+      1: `
+      <div style='vertical-align: top; max-width: 40%; display: inline-block;'>
+        <div style=' float: left;'>
+          <div style='width: 50px; height:50px; background-color: grey; border-radius: 50%; display: inline-block;'></div>
+        </div>
+        <div style=' text-align: left'>
+          <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p>
+          <h3>CHANEL IMAN</h3>
+          <h4>CHANEL IMAN</h4>
+        </div>
+      </div>`,
+      2: `
+      <div style='vertical-align: top; max-width: 40%; display: inline-block;'>
+        <div style=' float: left;'>
+          <div style='width: 50px; height:50px; background-color: grey; border-radius: 50%; display: inline-block;'></div>
+        </div>
+        <div style=' text-align: left'>
+          <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p>
+          <h3>CHANEL IMAN</h3>
+          <h4>CHANEL IMAN</h4>
+        </div>
+      </div>`,
+      3: `
+      <div style='vertical-align: top; max-width: 40%; display: inline-block;'>
+        <div style=' float: left;'>
+          <div style='width: 50px; height:50px; background-color: grey; border-radius: 50%; display: inline-block;'></div>
+        </div>
+        <div style=' text-align: left'>
+          <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p>
+          <h3>CHANEL IMAN</h3>
+          <h4>CHANEL IMAN</h4>
+        </div>
+      </div>`,
+      4: `
+      <div style='vertical-align: top; max-width: 40%; display: inline-block;'>
+        <div style=' float: left;'>
+          <div style='width: 50px; height:50px; background-color: grey; border-radius: 50%; display: inline-block;'></div>
+        </div>
+        <div style=' text-align: left'>
+          <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p>
+          <h3>CHANEL IMAN</h3>
+          <h4>CHANEL IMAN</h4>
+        </div>
+      </div>`,
+    },
+    // cta: { data: "<button>Load more projects</button>" },
+
+  },
+
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#d74680", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitle: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#fff", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "#fff", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
+    },
+    h3: {
+      fontSize: "16px", color: "white", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0px", marginTop: "20px", textAlign: "left"
+    },
+    // nav_links: {
+    //   paddingLeft: "0px"
+    // },
+    // nav_links_li: {
+    //   display: "inline-block", margin: "0 5px", cursor: "pointer", fontSize: "16px", textTransform: "uppercase"
+    // },
+    // nav_links_active: {
+    //   backgroundColor: "#fff", padding: "5px 15px", borderRadius: "5px"
+    // },
+    // nav_links_notActive: {
+    //   backgroundColor: "rgba(0,0,0,.1)", padding: "5px 15px", borderRadius: "5px"
+    // },
+    italic: {
+      fontSize: "15px", color: "#fff", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px", textAlign: "left", fontStyle: "italic"
+    },
+    aboutContainer: {
+      paddingBottom: "80px", marginTop: "30px"
+    },
+    aboutDivs: {
+     maxWidth: "520px", padding: "0px 0px", margin: "10px 20px", textAlign: "left"
+
+    },
+    h4: {
+        fontSize: "12px", color: "#ffdd99", letterSpacing: "1px", margin: "5px auto 25px auto", paddingTop: "0px"
+      },
+    // aboutImgs: {
+    //   width: "100%", marginTop: "20px"
+    // },
+    // cta: {
+    //   marginBottom: "80px", textAlign: "center", color: "white", fontSize: "14px", backgroundColor: "#17c2a4", padding: "20px 50px", borderRadius: "5px",
+    //     borderStyle: "solid", borderTopWidth: "0px", borderLeftWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "4px", borderBottomColor: "#14a58c", textTransform: "uppercase"
+    //   },
+    //
+
+
+  }
+};
+
+let about = new Element();
+about.createElem('section', 'page', 'about');
+                //WhereToAdd, whatToAdd
+about.addElements('#about', aboutData.html.container);
+about.addElements('#about > .container', aboutData.html.sectionTitle);
+about.addElements('#about > .container', aboutData.html.hr);
+about.addElements('#about > .container', aboutData.html.subtitle);
+about.addElements('#about > .container', aboutData.html.aboutDivsContainer);
+about.addElements('#about > .container > .aboutContainer', aboutData.html.aboutDivs);
+about.addStyle('#about', aboutData.style.page);
+about.addStyle('#about > .container > .sectionTitle', aboutData.style.sectionTitle);
+about.addStyle('hr', aboutData.style.hr);
+about.addStyle('#about > .container > .aboutContainer > div > div > h3', aboutData.style.h3);
+about.addStyle('#about > .container > .aboutContainer > div > div > h4', aboutData.style.h4);
+about.addStyle('#about > .container > p', aboutData.style.subtitle);
+about.addStyle('.aboutContainer', aboutData.style.aboutContainer);
+about.addStyle('#about > .container > .aboutContainer > div > div', aboutData.style.aboutDivs);
+about.addStyle('#about > .container > .aboutContainer > div > div > p', aboutData.style.italic);
+about.addStyle('.aboutContainer > div > div > img', aboutData.style.aboutImgs);
