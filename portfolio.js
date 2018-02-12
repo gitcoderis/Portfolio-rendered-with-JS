@@ -333,12 +333,12 @@ let skillsData = {
     sectionTitle: { data: "<h1 class='sectionTitleDark'>WE GOT SKILLS!</h1>" },
     hr: {data: "<hr>"},
     subtitle: { data: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
-    servicesDivsContainer: {data: "<div class='skillsContainer'></div>"},
-    servicesDivs: {
-      branding: "<div><img src='./assets/b.png' alt='' /><h3>Branding</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      design: "<div><img src='./assets/r.png' alt='' /><h3>Design</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      developement: "<div><img src='./assets/g.png' alt='' /><h3>Developement</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
-      science: "<div><img src='./assets/o.png' alt='' /><h3>Rocket Science</h3><p class='mainText'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p></div>",
+    skillsDivsContainer: {data: "<div class='skillsContainer'></div>"},
+    skillsDivs: {
+      branding: "<div><img src='./assets/b.png' alt='' /><h3>WEB DESIGN</h3></div>",
+      design: "<div><img src='./assets/r.png' alt='' /><h3>HTML / CSS</h3></div>",
+      developement: "<div><img src='./assets/g.png' alt='' /><h3>GRAPHIC DESIGN</h3></div>",
+      science: "<div><img src='./assets/o.png' alt='' /><h3>UI / UX</h3></div>",
     }
   },
   style: {
@@ -360,14 +360,14 @@ let skillsData = {
       fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "0px"
     },
     skillsContainer: {
-      paddingBottom: "30px"
+      paddingBottom: "30px", margin: "30px 0 60px 0"
     },
-    servicesDivs: {
-      display: "inline-block", width: "25%", maxWidth: "160px", flaot: "left", padding: "0px 20px"
+    skillsDivs: {
+      display: "inline-block", width: "25%", maxWidth: "160px", flaot: "left", padding: "0px 20px", margin: "0px 50px"
 
     },
-    servicesImgs: {
-      width: "100%"
+    skillsImgs: {
+      width: "100%", marginTop: "20px"
     }
   }
 };
@@ -379,13 +379,82 @@ skills.addElements('#skills', skillsData.html.container);
 skills.addElements('#skills > .container', skillsData.html.sectionTitle);
 skills.addElements('#skills > .container', skillsData.html.hr);
 skills.addElements('#skills > .container', skillsData.html.subtitle);
-skills.addElements('#skills > .container', skillsData.html.servicesDivsContainer);
-skills.addElements('#skills > .container > .skillsContainer', skillsData.html.servicesDivs);
+skills.addElements('#skills > .container', skillsData.html.skillsDivsContainer);
+skills.addElements('#skills > .container > .skillsContainer', skillsData.html.skillsDivs);
 skills.addStyle('#skills', skillsData.style.page);
 skills.addStyle('.sectionTitleDark', skillsData.style.sectionTitleDark);
 skills.addStyle('hr', skillsData.style.hr);
 skills.addStyle('#skills > .container > h3', skillsData.style.h3);
 skills.addStyle('#skills > .container > p', skillsData.style.subtitle);
 skills.addStyle('.skillsContainer', skillsData.style.skillsContainer);
-skills.addStyle('.skillsContainer > div', skillsData.style.servicesDivs);
-skills.addStyle('.skillsContainer > div > img', skillsData.style.servicesImgs);
+skills.addStyle('#skills > .container > .skillsContainer > div', skillsData.style.skillsDivs);
+skills.addStyle('.skillsContainer > div > img', skillsData.style.skillsImgs);
+
+
+
+// PORFOLIO
+
+
+
+let folioData = {
+  html: {
+    container: {data: "<div class='container'></div>"},
+    sectionTitle: { data: "<h1 class='sectionTitleDark'>OUR PORTFOLIO</h1>" },
+    hr: {data: "<hr>"},
+    subtitle: { data: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
+    folioDivsContainer: {data: "<div class='folioContainer'></div>"},
+    folioDivs: {
+      1: "<div><img src='./assets/1.png' alt='' /><h3>Isometric Perspective Mock-Up</h3></div>",
+      2: "<div><img src='./assets/2.png' alt='' /><h3>Time Zone App UI</h3></div>",
+      3: "<div><img src='./assets/3.png' alt='' /><h3>Viro Media Players UI</h3></div>",
+      4: "<div><img src='./assets/4.png' alt='' /><h3>Blog / Magazine Flat UI Kit</h3></div>",
+    }
+  },
+  style: {
+    page: {
+      width: "100%", minHeight: "480px", backgroundColor: "#ffdd99", textAlign: "center",
+      // lineHeight: "60px", paddingTop: "60px", color: "white"
+    },
+    container: {
+      maxWidth: "1140px", textAlign: "center"
+    },
+    sectionTitleDark: {
+      margin: "0 auto", padding: "90px 0px 0px 0px", textAlign: "center", color: "#3c4761", fontSize: "30px", letterSpacing: "2px", maxWidth: "900px"
+    },
+    hr: {backgroundColor: "black", opacity: "0.15", width: "90px", height: "4px", borderWidth: "0px"},
+    subtitle: {
+      fontSize: "15px", color: "#3c4761", lineHeight: "20px", maxWidth: "600px", margin: "0 auto", paddingTop: "5px", paddingBottom: "0px"
+    },
+    h3: {
+      fontSize: "16px", color: "black", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px", marginTop: "0px"
+    },
+    folioContainer: {
+      paddingBottom: "80px", marginTop: "30px"
+    },
+    folioDivs: {
+      display: "inline-block", width: "45%", maxWidth: "520px", flaot: "left", padding: "0px 0px", margin: "0px 20px"
+
+    },
+    folioImgs: {
+      width: "100%", marginTop: "20px"
+    }
+  }
+};
+
+let folio = new Element();
+folio.createElem('section', 'page', 'folio');
+                //WhereToAdd, whatToAdd
+folio.addElements('#folio', folioData.html.container);
+folio.addElements('#folio > .container', folioData.html.sectionTitle);
+folio.addElements('#folio > .container', folioData.html.hr);
+folio.addElements('#folio > .container', folioData.html.subtitle);
+folio.addElements('#folio > .container', folioData.html.folioDivsContainer);
+folio.addElements('#folio > .container > .folioContainer', folioData.html.folioDivs);
+folio.addStyle('#folio', folioData.style.page);
+folio.addStyle('.sectionTitleDark', folioData.style.sectionTitleDark);
+folio.addStyle('hr', folioData.style.hr);
+folio.addStyle('#folio > .container > .folioContainer > div > h3', folioData.style.h3);
+folio.addStyle('#folio > .container > p', folioData.style.subtitle);
+folio.addStyle('.folioContainer', folioData.style.folioContainer);
+folio.addStyle('#folio > .container > .folioContainer > div', folioData.style.folioDivs);
+folio.addStyle('.folioContainer > div > img', folioData.style.folioImgs);
